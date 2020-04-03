@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<html ng-app="consumoApp"> 
+
+    <head>
+        <meta charset="utf-8">
+        
+        <title>Calcular Consumo</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <script src="app.js" type="text/javascript"></script>
+
+    
+    </head>
+
+    <body ng-controller="appController">
+       <div class="container-fluid">
+            <h1 class="text-center">
+                Quanto Custa?
+            </h1>
+
+            <h3 class="text-center">
+                <small class="text-muted">Calcule o seu consumo médio do seu veículo.</small>
+            </h3>
+            
+            <br>
+            <br>
+            
+            <form>
+                <div class="form-row">
+                    
+                    <div class="form-group col-md-6">
+                        <label >Quilometragem</label>
+                        <input type="text" class="form-control" ng-model="k" placeholder="KM/H">
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label>Combustível</label>
+                        <input type="text" class="form-control" ng-model="l" placeholder="Litros">
+                    </div>
+
+                    
+
+                    <div class="form-group col-md-6">
+                        <input type="button" class="btn btn-success" class="fixed-bottom" value="Calcular" ng-click="Calcular()">
+                        <input type="button" class="btn btn-warning" value="Limpar" ng-click="Limpar()">
+                     </div>
+
+                </div>
+            </form>
+            </div>
+       </div>
+
+        <div class="container-fluid"  ng-show="resultado">
+            <h2 class="text-center">
+                O consumo do seu veículo foi de:  {{ situacao }}
+            </h2>
+         </div>
+        
+    </body>
+    
+</html>
